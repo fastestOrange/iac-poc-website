@@ -1,63 +1,61 @@
 import Head from "next/head";
+import groq from 'groq'
 import "../styles/Home.module.scss";
+import client from '../modules/sanity/client'
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props)
   return (
-    <div>
-      <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
-            <img
-              src="https://bulma.io/images/bulma-logo.png"
-              width="112"
-              height="28"
-            />
-          </a>
-
-          <a
-            role="button"
-            className="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-
-        <div id="navbarBasicExample" className="navbar-menu">
-          <div className="navbar-start">
-            <a className="navbar-item">Home</a>
-
-            <a className="navbar-item">Documentation</a>
-
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">More</a>
-
-              <div className="navbar-dropdown">
-                <a className="navbar-item">About</a>
-                <a className="navbar-item">Jobs</a>
-                <a className="navbar-item">Contact</a>
-                <hr className="navbar-divider" />
-                <a className="navbar-item">Report an issue</a>
-              </div>
-            </div>
-          </div>
-
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <a className="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a className="button is-light">Log in</a>
-              </div>
-            </div>
+    <div className="container">
+      <div className="box">
+      People
+      {props.people.map(person => (
+        <div className="card m-4">
+        <div className="card-content">
+          <div className="content">
+            <h2>{person.firstName} {person.lastName}</h2>
           </div>
         </div>
-      </nav>
+      </div>
+      ))}
+      Sessions
+      {props.sessions.map(session => (
+        <div className="card m-4">
+        <div className="card-content">
+          <div className="content">
+          <>
+          <h1>{session.sessionName}</h1>
+          <div>Speakers: {session.speakers.firstName} {session.speakers.lastName}</div>
+          <div>Moderated By: {session.moderators.firstName} {session.moderators.lastName}</div>
+         </>
+            
+          </div>
+        </div>
+      </div>
+      ))}
+        </div>
     </div>
   );
+}
+
+const peopleQuery = groq`*[_type == "person"] {
+  firstName,
+  lastName
+}`;
+
+const sessionQuery = groq`*[_type == "session" && sessionName == "Borders between Bonanza"] {
+  sessionName,
+  speakers->,
+  moderators->
+}`
+export async function getStaticProps() {
+  const people = await client.fetch(peopleQuery);
+  const sessions = await client.fetch(sessionQuery);
+
+  return {
+    props: {
+      people,
+      sessions
+    },
+  }
 }

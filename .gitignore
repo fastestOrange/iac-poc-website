@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/poc-iac/node_modules
+
 /.pnp
 .pnp.js
 
