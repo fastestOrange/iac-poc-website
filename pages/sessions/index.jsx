@@ -1,11 +1,12 @@
 import Head from "next/head";
 import groq from 'groq'
-import "../styles/Home.module.scss";
-import client from '../modules/sanity/client'
+// import "../styles/Home.module.scss";
+import client from '../../modules/sanity/client'
+import { DefaultLayout } from '../../layouts/DefaultLayout';
 
 export default function Sessions(props) {
   return (
-    <div className="container">
+    <DefaultLayout>
       <div className="box">
        {props.sessions.map(session => (
          <>
@@ -16,7 +17,7 @@ export default function Sessions(props) {
        ))}
        <pre>{JSON.stringify(props.sessions, null, 2)}</pre>
       </div>
-    </div>
+    </DefaultLayout>
   );
 }
 

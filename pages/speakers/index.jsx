@@ -1,11 +1,11 @@
-import Head from "next/head";
 import groq from 'groq'
-import "../styles/Home.module.scss";
-import client from '../modules/sanity/client'
+// import "../styles/Home.module.scss";
+import client from '../../modules/sanity/client';
+import { DefaultLayout } from '../../layouts/DefaultLayout';
 
 export default function People(props) {
   return (
-    <div className="container">
+    <DefaultLayout>
       <div className="box">
       {props.people.map(person => (
         <div className="card m-4">
@@ -17,7 +17,7 @@ export default function People(props) {
       </div>
       ))}
         </div>
-    </div>
+    </DefaultLayout>
   );
 }
 
