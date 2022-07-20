@@ -1,43 +1,35 @@
-import {MdLocalMovies as icon} from 'react-icons/md'
+import { MdLocalMovies as icon } from "react-icons/md";
 
 export default {
-  name: 'venue',
-  title: 'Venue',
-  type: 'document',
+  name: "venue",
+  title: "Venue",
+  type: "document",
   icon,
   fields: [
     {
-      name: 'sessionName',
-      title: 'Name',
-      type: 'string',
+      name: "venueName",
+      title: "Venue Name",
+      type: "string",
     },
     {
-      name: 'type',
-      title: 'Type',
-      type: 'string',
+      name: "address",
+      title: "Address",
+      type: "string",
     },
     {
-      name: 'date',
-      title: 'Date',
-      type: 'string',
+      name: "contact",
+      title: "Contact",
+      type: "string",
     },
     {
-      name: 'speakers',
-      title: 'Speakers',
-      type: 'reference',
-      to: [{type: 'person'}]
+      name: "phoneNumber",
+      title: "Phone Number",
+      type: "string",
     },
     {
-      name: 'moderators',
-      title: 'Moderators',
-      type: 'reference',
-      to: [{type: 'person'}]
-    },
-    {
-      name: 'roles',
-      title: 'Roles',
-      type: 'array', 
-      of: [{type: 'block'}]
+      name: "email",
+      title: "Email",
+      type: "string",
     },
   ],
-}
+};

@@ -1,49 +1,65 @@
-import {MdLocalMovies as icon} from 'react-icons/md'
+import { MdLocalMovies as icon } from "react-icons/md";
 
 export default {
-  name: 'session',
-  title: 'Session',
-  type: 'document',
+  name: "session",
+  title: "Session",
+  type: "document",
   icon,
   fields: [
     {
-      name: 'sessionName',
-      title: 'Name',
-      type: 'string',
+      name: "sessionName",
+      title: "Name",
+      type: "string",
     },
     {
-      name: 'type',
-      title: 'Type',
-      type: 'reference',
-      to: [{type: 'sessionTypes'}]
+      name: "type",
+      title: "Type",
+      type: "reference",
+      to: [{ type: "sessionTypes" }],
     },
     {
-      name: 'date',
-      title: 'Date',
-      type: 'date',
+      name: "event",
+      title: "Event",
+      type: "reference",
+      to: [{ type: "event" }],
     },
     {
-      name: 'speakers',
-      title: 'Speakers',
-      type: 'reference',
-      to: [{type: 'person'}]
+      name: "date",
+      title: "Date",
+      type: "date",
     },
     {
-      name: 'moderators',
-      title: 'Moderators',
-      type: 'reference',
-      to: [{type: 'person'}]
+      name: "startTime",
+      title: "Start Time",
+      type: "datetime",
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'string'
+      name: "endTime",
+      title: "End Time",
+      type: "datetime",
     },
     {
-      name: 'location',
-      title: 'Location',
-      type: 'reference',
-      to: [{type: 'room'}]
+      name: "speakers",
+      title: "Speakers",
+      type: "array",
+      of: [{ type: "person" }],
+    },
+    {
+      name: "moderators",
+      title: "Moderators",
+      type: "array",
+      of: [{ type: "person" }],
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "string",
+    },
+    {
+      name: "location",
+      title: "Location",
+      type: "reference",
+      to: [{ type: "room" }],
     },
   ],
-}
+};
