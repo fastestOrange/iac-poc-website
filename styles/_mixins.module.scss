@@ -1,0 +1,73 @@
+@use 'variables.module';
+
+@mixin row-between {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin row-even {
+  @include row-between;
+  justify-content: space-evenly;
+}
+
+@mixin row-center {
+  @include row-between;
+  justify-content: center;
+}
+
+@mixin row-around {
+  @include row-between;
+
+  justify-content: space-around;
+}
+
+@mixin row-start {
+  @include row-between;
+
+  justify-content: flex-start;
+}
+
+@mixin row-end {
+  @include row-between;
+
+  justify-content: flex-end;
+}
+
+@mixin col-between {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin col-even {
+  @include col-between;
+
+  justify-content: space-evenly;
+}
+
+@mixin col-center {
+  @include col-between;
+
+  justify-content: center;
+}
+
+@mixin col-around {
+  @include col-between;
+
+  justify-content: space-around;
+}
+
+@mixin col-start {
+  @include col-between;
+
+  justify-content: flex-start;
+}
+
+@mixin col-end {
+  @include col-between;
+
+  justify-content: flex-end;
+}

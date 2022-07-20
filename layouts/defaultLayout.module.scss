@@ -1,0 +1,28 @@
+@use 'styles/variables.module';
+@use 'styles/mixins.module';
+
+// Header
+
+.header {
+    width: 100%;
+}
+
+// gives intrinsic size for responsive layout to work
+.logo-image-container {
+    height: 70px;
+    width: 70px;
+}
+
+.logo-text {
+    @include mixins.col-center;
+    font-size: variables.$font_size_sm;
+    height: 100%;
+    padding: variables.$sp_xs;
+
+}
+
+.logo-word::first-letter {
+    font-weight: 900;
+    font-size: variables.$font_size_std;
+    color: variables.$color_main_1;
+}
