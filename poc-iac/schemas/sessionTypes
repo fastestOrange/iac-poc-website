@@ -1,12 +1,12 @@
 export default {
-  name: 'sessionTypes',
-  title: 'Session Types',
-  type: 'document',
+  name: "sessionTypes",
+  title: "Session Types",
+  type: "document",
   fields: [
     {
-      name: 'sessionType',
-      title: 'Session Type',
-      type: 'string',
-    }
+      name: "sessionType",
+      title: "Session Type",
+      type: "string",
+    },
   ],
-}
+};
