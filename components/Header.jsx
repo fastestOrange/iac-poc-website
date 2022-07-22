@@ -2,10 +2,11 @@ import Image from "next/image";
 import icon from "../assets/IACIcon.png";
 import classNameNames from "classnames/bind";
 import styles from "../layouts/defaultLayout.module.scss";
-
+import { useUser } from 'reactfire';
 const cx = classNameNames.bind(styles);
 
 const Header = () => {
+  const { data: user } = useUser();
   return (
     <section className={cx("header")}>
       <nav
@@ -44,9 +45,9 @@ const Header = () => {
         </div>
         <div id="iacNavbar" className={cx("navbar-menu")}>
           <div className={cx("navbar-end")}>
-            <a className={cx("navbar-item button is-light")} href="/">
+            {user ? user?.displayName: (<a className={cx("navbar-item button is-light")} href="/login">
               Log in
-            </a>
+            </a>)}
           </div>
         </div>
       </nav>
