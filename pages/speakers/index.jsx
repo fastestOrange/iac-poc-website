@@ -1,36 +1,33 @@
-import groq from 'groq'
+import groq from "groq";
 // import "../styles/Home.module.scss";
-import client from '../../modules/sanity/client';
-import { DefaultLayout } from '../../layouts/DefaultLayout';
+import client from "../../modules/sanity/client";
+import SpeakerCard from "../../components/SpeakerCard";
 
-export default function People(props) {
+export default function Speakers({ people }) {
+  console.log("speakers", people);
   return (
-    <DefaultLayout>
-      <div className="box">
-      {props.people.map(person => (
-        <div className="card m-4">
-        <div className="card-content">
-          <div className="content">
-            <h2>{person.firstName} {person.lastName}</h2>
-          </div>
-        </div>
-      </div>
+    <section className="speaker-container is-justify-content-center">
+      <h1 className="title is-1">Presenters</h1>
+      {people.map((person) => (
+        <SpeakerCard person={person} />
       ))}
-        </div>
-    </DefaultLayout>
+    </section>
   );
 }
 
 const query = groq`*[_type == "person"] {
   firstName,
-  lastName
-}`
+  lastName,
+  professionalTitle,
+  bio
+}`;
 export async function getStaticProps() {
   const people = await client.fetch(query);
+  //TODO: match results to firebase query results in order to identify which people are speakers and filter them out.
 
   return {
     props: {
-      people
+      people,
     },
-  }
+  };
 }
