@@ -1,5 +1,6 @@
 import "../styles/reset.scss";
 import "../styles/globals.scss";
+<<<<<<< HEAD
 import { FirebaseAppProvider } from 'reactfire';
 
 const firebaseConfig = {
@@ -16,6 +17,15 @@ function MyApp({ Component, pageProps }) {
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
       <Component {...pageProps} />
     </FirebaseAppProvider>
+=======
+import { DefaultLayout } from "../layouts/DefaultLayout";
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <DefaultLayout>
+      <Component {...pageProps} />
+    </DefaultLayout>
+>>>>>>> wip - created quick link for page testing.  moved default layout up a level to _app so it is available on all pages without needing to import defaultLayout in multiple files.
   );
 }
 

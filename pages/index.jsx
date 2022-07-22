@@ -1,12 +1,7 @@
 import "../styles/Home.module.scss";
-import { DefaultLayout } from "../layouts/DefaultLayout";
 
 export default function Home(props) {
   return (
-    <DefaultLayout>
-      <div className="p-6">
-        MAIN CONTENT WINDOW
-      </div>
-    </DefaultLayout>
+    <div className="p-6 has-background-link-light">MAIN CONTENT WINDOW</div>
   );
 }
