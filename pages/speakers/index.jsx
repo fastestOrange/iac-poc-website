@@ -6,8 +6,8 @@ import SpeakerCard from "../../components/SpeakerCard";
 export default function Speakers({ people }) {
   console.log("speakers", people);
   return (
-    <section className="speaker-container is-justify-content-center">
-      <h1 className="title is-1">Presenters</h1>
+    <section className="speaker-container">
+      <h1 className="title">Presenters</h1>
       {people.map((person) => (
         <SpeakerCard person={person} />
       ))}
