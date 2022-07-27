@@ -1,10 +1,17 @@
-@use 'variables.module';
+@use 'styles/variables.module';
 @use 'styles/mixins.module';
 
 // Header
 
-.header {
+.navbar {
+    @include mixins.row-between;
     width: 100%;
+    padding: variables.$sp_std;
+}
+
+.navbar-brand {
+    @include mixins.row-center;
+    max-width: 150px
 }
 
 // gives intrinsic size for responsive layout to work
