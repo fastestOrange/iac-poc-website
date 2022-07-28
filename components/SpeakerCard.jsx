@@ -5,8 +5,7 @@ import styles from "./speakerComponents.module.scss";
 const cx = classNames.bind(styles);
 
 const SpeakerCard = ({ person }) => {
-  console.log("person", person);
-  const { firstName, lastName, professionalTitle, bio } = person;
+  const { firstName, lastName, professionalTitle } = person;
 
   return (
     <div className={cx("card")}>
