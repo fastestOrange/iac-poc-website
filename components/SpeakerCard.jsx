@@ -1,21 +1,27 @@
+import classNames from "classnames/bind";
 import Image from "next/image";
+import styles from "./speakerComponents.module.scss";
+
+const cx = classNames.bind(styles);
 
 const SpeakerCard = ({ person }) => {
   console.log("person", person);
   const { firstName, lastName, professionalTitle, bio } = person;
 
   return (
-    <div className="card">
-      <div class="card-image">
-        <figure class="image is-2x1">
-          <Image src="/" layout="fill" objectFit="contain" />
-        </figure>
-      </div>
-      <p class="card is-centered">
-        {firstName} {lastName}
-      </p>
+    <div className={cx("card")}>
+      {/*TODO: Replace with Image when available in data */}
+      <div className={cx("image-placeholder")} />
 
-      <div>{professionalTitle}</div>
+      <div className={cx("speaker-info")}>
+        <p className={cx("name")}>
+          {firstName} {lastName}
+        </p>
+
+        <p className={cx("professional-title")}>{professionalTitle}</p>
+
+        <div className={cx("social-media")}></div>
+      </div>
     </div>
   );
 };

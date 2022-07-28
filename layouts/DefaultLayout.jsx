@@ -1,7 +1,12 @@
-import Header from "../components/Header";
 import Link from "next/link";
 import { getAuth } from "firebase/auth"; // Firebase v9+
 import { AuthProvider, useFirebaseApp } from "reactfire";
+import classNames from "classnames/bind";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import styles from "./defaultLayout.module.scss";
+
+const cx = classNames.bind(styles);
 
 export function DefaultLayout({ children }) {
   const app = useFirebaseApp();
@@ -9,31 +14,24 @@ export function DefaultLayout({ children }) {
 
   return (
     <AuthProvider sdk={auth}>
-      <div className="container">
-        <div className="level">
-          <Header />
-        </div>
+      <div className={cx("layout-container")}>
+        <Header />
+
         {/* Temporary links to easily access pages for development */}
-        <div className="level-item has-text-centered">
+        <section className={cx("quick-links")}>
           QUICK LINKS: <Link href="/speakers">Speakers</Link>
-        </div>
-        <div className="columns">
-          <div className="column">
+        </section>
+
+        <section className={cx("body")}>
+          <div className={cx("left-menu")}>
             LEFT HAND
             <br />
             MENU
           </div>
-        </div>
-        <div className="level-item has-text-centered">QUICK LINKS</div>
-        <div className="columns">
-          <div className="column">
-            LEFT HAND
-            <br />
-            MENU
-          </div>
-          <div className="column">{children}</div>
-        </div>
-        <div className="footer">Footer</div>
+          {/* TODO: Move title here and pass prop? */}
+          <div className={cx("content")}>{children}</div>
+        </section>
+        <Footer />
       </div>
     </AuthProvider>
   );
