@@ -1,16 +1,21 @@
 import groq from "groq";
-// import "../styles/Home.module.scss";
+import classNames from "classnames/bind";
+import styles from "./speakers.module.scss";
 import client from "../../modules/sanity/client";
 import SpeakerCard from "../../components/SpeakerCard";
+
+const cx = classNames.bind(styles);
 
 export default function Speakers({ people }) {
   console.log("speakers", people);
   return (
-    <section className="speaker-container">
-      <h1 className="title">Presenters</h1>
-      {people.map((person) => (
-        <SpeakerCard person={person} />
-      ))}
+    <section className={cx("speakers-container")}>
+      <h1 className={cx("page-title")}>Presenters</h1>
+      <div className={cx("speaker-cards-container")}>
+        {people.map((person) => (
+          <SpeakerCard person={person} />
+        ))}
+      </div>
     </section>
   );
 }

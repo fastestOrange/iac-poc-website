@@ -559,11 +559,6 @@
   dependencies:
     "fill-range" "^7.0.1"
 
-"bulma@^0.9.2":
-  "integrity" "sha512-e14EF+3VSZ488yL/lJH0tR8mFWiEQVCMi/BQUMi2TGMBOk+zrDg4wryuwm/+dRSHJw0gMawp2tsW7X1JYUCE3A=="
-  "resolved" "https://registry.npmjs.org/bulma/-/bulma-0.9.2.tgz"
-  "version" "0.9.2"
-
 "caniuse-lite@^1.0.30001332":
   "integrity" "sha512-HpQhpzTGGPVMnCjIomjt+jvyUu8vNFo3TaDiZ/RcoTrlOq/5+tC8zHdsbgFB6MxmaY+jCpsH09aD80Bb4Ow3Sg=="
   "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001363.tgz"

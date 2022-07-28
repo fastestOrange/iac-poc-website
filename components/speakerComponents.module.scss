@@ -1,0 +1,33 @@
+@use 'styles/variables.module';
+@use 'styles/mixins.module';
+
+// SpeakerCard
+
+.card {
+    @include mixins.col-start;
+    width: 200px;
+    min-height: 230px;
+    background: variables.$placeholder_lightgray;
+}
+
+.image-placeholder {
+    width: 100px;
+    height: 100px;
+    margin: variables.$sp_sm;
+    background: variables.$placeholder_darkgray;
+}
+
+.speaker-info {
+    @include mixins.col-between;
+
+    > * {
+        margin: variables.$sp_xs;
+    }
+}
+
+.social-media {
+    width: 100px;
+    height: 20px;
+    border: 1px solid variables.$placeholder_darkgray;
+}
+
