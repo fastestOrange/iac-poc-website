@@ -43,6 +43,8 @@
 .body {
     @include mixins.row-start;
     align-items: stretch;
+    width: 100%;
+    min-height: 62vh;
     margin: variables.$sp_std;
 
     > * {
