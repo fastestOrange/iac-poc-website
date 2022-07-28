@@ -11,7 +11,9 @@ const SpeakerCard = ({ person }) => {
   return (
     <div className={cx("card")}>
       {/*TODO: Replace with Image when available in data */}
-      <div className={cx("image-placeholder")} />
+      <a href={`speakers/${firstName}-${lastName}`}>
+        <div className={cx("image-placeholder")} />
+      </a>
 
       <div className={cx("speaker-info")}>
         <p className={cx("name")}>
