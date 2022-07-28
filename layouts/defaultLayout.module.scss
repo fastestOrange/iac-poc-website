@@ -1,6 +1,10 @@
 @use 'styles/variables.module';
 @use 'styles/mixins.module';
 
+.layout-container {
+    @include mixins.col-start;
+}
+
 // Header
 
 .navbar {
@@ -32,4 +36,33 @@
     font-weight: 900;
     font-size: variables.$font_size_std;
     color: variables.$color_main_1;
+}
+
+// Body
+
+.body {
+    @include mixins.row-start;
+    align-items: stretch;
+    margin: variables.$sp_std;
+
+    > * {
+        padding: variables.$sp_std;
+    }
+}
+
+.left-menu {
+    width: 10%;
+    min-width: 150px;
+}
+
+.content {
+    width: 90%;
+}
+
+// Footer
+
+.footer {
+    height: 200px;
+    width: 100%;
+    background: lightgray
 }
