@@ -1,5 +1,5 @@
 @use 'variables.module';
-@import "~bulma/bulma";
+// @import "~bulma/bulma";
 
 // Makes default font 10pt so it's easy math for using rem
 html {
@@ -10,7 +10,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-size: variables.$font_size_std;
+  // font-size: variables.$font_size_std;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -32,10 +32,10 @@ a:focus {
 }
 
 h1 {
-  font-size: variables.$font_size_xl
+  // font-size: variables.$font_size_xl
 }
 
 p {
-  font-size: variables.$font_size_std;
+  // font-size: variables.$font_size_std;
 }
 

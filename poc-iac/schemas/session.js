@@ -42,13 +42,15 @@ export default {
       name: "speakers",
       title: "Speakers",
       type: "array",
-      of: [{ type: "person" }],
+      //josey added code to be able to reference multiple person types rather than recreate data
+      of: [{ type: "reference", to: {type: "person"} }],
     },
     {
       name: "moderators",
       title: "Moderators",
       type: "array",
-      of: [{ type: "person" }],
+      //josey added code to be able to reference multiple person types rather than recreate data
+      of: [{ type: "reference", to: {type: "person"} }],
     },
     {
       name: "description",
