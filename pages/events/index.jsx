@@ -1,31 +1,31 @@
-// import groq from 'groq';
-// import client from "../../modules/sanity/client";
+import groq from 'groq';
+import client from "../../modules/sanity/client";
 
-// export default function Event({ events }) {
-//     // const { name, theme} = event;
+export default function Event({ events }) {
+    // const { name, theme} = event;
 
-//     return (
-//         <section>
-//             <h1>Event List</h1>
+    return (
+        <section>
+            <h1>Event List</h1>
 
-//          {events.map((event) => (
-//             <ul>
-//             {event.name}
-//             </ul>
+         {events.map((event) => (
+            <ul>
+            {event.name}
+            </ul>
 
-//          ) )}
+         ) )}
        
-//         </section>
-//     );
-// }
+        </section>
+    );
+}
 
-// const eventsQuery = groq`*[_type == "event"] {
-//     name,
-//     theme
-// }`;
+const eventsQuery = groq`*[_type == "event"] {
+    name,
+    theme
+}`;
 
-// export async function getStaticProps() {
-//     const events = await client.fetch(eventsQuery)
+export async function getStaticProps() {
+    const events = await client.fetch(eventsQuery)
 
-//     return { props: { events } };
-// }
+    return { props: { events } };
+}
