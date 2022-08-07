@@ -1,11 +1,11 @@
 import classNames from "classnames/bind";
-import Image from "next/image";
 import styles from "./speakerComponents.module.scss";
+import SocialMediaIcons from "./SocialMediaIcons";
 
 const cx = classNames.bind(styles);
 
 const SpeakerCard = ({ person }) => {
-  const { firstName, lastName, professionalTitle } = person;
+  const { firstName, lastName, professionalTitle, socials } = person;
 
   return (
     <div className={cx("card")}>
@@ -22,6 +22,7 @@ const SpeakerCard = ({ person }) => {
         <p className={cx("professional-title")}>{professionalTitle}</p>
 
         <div className={cx("social-media")}></div>
+        <SocialMediaIcons socials={socials} />
       </div>
     </div>
   );

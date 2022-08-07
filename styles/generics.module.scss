@@ -1,0 +1,8 @@
+@use 'variables.module';
+@use 'mixins.module';
+
+// Images and Icons
+
+.social-media {
+    @include mixins.row-between
+}

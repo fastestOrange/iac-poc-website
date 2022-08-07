@@ -2,11 +2,13 @@ import groq from "groq";
 import classNames from "classnames/bind";
 import styles from "./speakers.module.scss";
 import client from "../../modules/sanity/client";
+import SocialMediaIcons from "../../components/SocialMediaIcons";
 
 const cx = classNames.bind(styles);
 
 export default function Speaker({ person }) {
-  const { firstName, lastName, professionalTitle, bio } = person;
+  const { firstName, lastName, professionalTitle, bio, socials } = person;
+
   console.log("speaker in component", person);
   return (
     <section className={cx("speaker-container")}>
@@ -14,6 +16,7 @@ export default function Speaker({ person }) {
       <p className={cx("speaker-name")}>
         {firstName} {lastName}
       </p>
+      <SocialMediaIcons socials={socials} />
     </section>
   );
 }
@@ -58,7 +61,8 @@ const getSpeakerQuery = (fName, lName) => {
   firstName, 
   lastName, 
   professionalTitle, 
-  bio
+  bio,
+  linkedIn
 }`;
 };
 
@@ -68,11 +72,13 @@ export async function getStaticProps({ params }) {
     [fName, lName] = name.split("-");
     console.log("NAME", fName, lName);
 
-    const person = await client.fetch(getSpeakerQuery(fName, lName));
+    let person = await client.fetch(getSpeakerQuery(fName, lName));
+    person = person[0];
+    person.socials = [{ type: "linkedIn", link: person.linkedIn }];
 
     return {
       props: {
-        person: person[0],
+        person: person,
       },
     };
   } catch (e) {
