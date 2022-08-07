@@ -12,7 +12,7 @@ export default function Speaker({ person }) {
     <section className={cx("speaker-container")}>
       <div className={cx("image-placeholder")}></div>
       <p className={cx("speaker-name")}>
-        {firstName} {lastName}{" "}
+        {firstName} {lastName}
       </p>
     </section>
   );
@@ -21,7 +21,7 @@ export default function Speaker({ person }) {
 let fName;
 let lName;
 
-const query = groq`*[_type == "person"] {
+const getPeopleQuery = groq`*[_type == "person"] {
   firstName,
   lastName
 }`;
@@ -29,7 +29,7 @@ const query = groq`*[_type == "person"] {
 // Sets all the possible paths for our speakers
 export async function getStaticPaths() {
   try {
-    const people = await client.fetch(query);
+    const people = await client.fetch(getPeopleQuery);
     console.log("PEOPLE", people);
     const paths = people.map((person) => ({
       params: { speaker: person.firstName + "-" + person.lastName },
@@ -53,12 +53,14 @@ export async function getStaticPaths() {
 // TODO: get query working with variable firstName and lastName
 // https://www.sanity.io/docs/query-cheat-sheet
 
-const specificSpeakerQuery = groq`*[_type == "person" && firstName == "Alberta"]{
+const getSpeakerQuery = (fName, lName) => {
+  return groq`*[_type == "person" && firstName == "${fName}" && lastName == "${lName}"]{
   firstName, 
   lastName, 
   professionalTitle, 
   bio
 }`;
+};
 
 export async function getStaticProps({ params }) {
   try {
@@ -66,11 +68,11 @@ export async function getStaticProps({ params }) {
     [fName, lName] = name.split("-");
     console.log("NAME", fName, lName);
 
-    const person = await client.fetch(specificSpeakerQuery);
-    console.log("person in props", person);
+    const person = await client.fetch(getSpeakerQuery(fName, lName));
+
     return {
       props: {
-        person: person,
+        person: person[0],
       },
     };
   } catch (e) {
