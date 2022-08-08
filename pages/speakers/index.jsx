@@ -13,7 +13,10 @@ export default function Speakers({ people }) {
       <h1 className={cx("page-title")}>Presenters</h1>
       <div className={cx("speaker-cards-container")}>
         {people.map((person) => (
-          <SpeakerCard person={person} />
+          <SpeakerCard
+            key={person.firstName + person.lastName}
+            person={person}
+          />
         ))}
       </div>
     </section>

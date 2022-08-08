@@ -9,9 +9,10 @@ const styles = { ...genericsStyles, ...speakersStyles };
 const cx = classNames.bind(styles);
 
 export default function Speaker({ person }) {
-  const { firstName, lastName, professionalTitle, bio, socials } = person;
+  const { firstName, lastName, professionalTitle, bio, roles, socials } =
+    person;
 
-  console.log("speaker in component", person);
+  console.log("speaker in component", person.roles);
   return (
     <section className={cx("speaker-container")}>
       <div className={cx("image-placeholder")}></div>
@@ -21,6 +22,10 @@ export default function Speaker({ person }) {
       <SocialMediaIcons socials={socials} />
 
       <h3>Roles</h3>
+      {/* {roles.map((role) =>
+        // <div key={role}>{role}</div>
+        console.log("role", role, role.roleTitle)
+      )} */}
       <h3>Bio</h3>
       <p>{bio}</p>
       <h3>Associated Sessions</h3>
@@ -69,19 +74,30 @@ export const getSpeakerQuery = (fName, lName) => {
   lastName, 
   professionalTitle, 
   bio,
+  roles,
   linkedIn
 }`;
+};
+
+// WIP: A role has a reference to a roleType and an event. This function extracts the actual data for those documents.
+export const getRoleDataQuery = (role) => {
+  const roleType = groq`*[_ref=="${role.roleTitle._ref}"]{
+      r
+    }`;
+  const eventName = groq`*[_ref=="${role.event._ref}"]`;
+  return { roleType, eventName };
 };
 
 export async function getStaticProps({ params }) {
   try {
     const name = params?.speaker;
     [fName, lName] = name.split("-");
-    console.log("NAME", fName, lName);
 
     let person = await client.fetch(getSpeakerQuery(fName, lName));
     person = person[0];
     person.socials = [{ type: "linkedIn", link: person.linkedIn }];
+
+    //TODO: Execute promises for every role to get data on roleType and eventName, add to person.role
 
     return {
       props: {
@@ -89,7 +105,7 @@ export async function getStaticProps({ params }) {
       },
     };
   } catch (e) {
-    console.log("Error from get static props of speaker");
+    console.log("Error from get static props of speaker", e);
     return {
       props: {
         person: {},

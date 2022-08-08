@@ -4,8 +4,8 @@ export default {
   type: "document",
   fields: [
     {
-      name: "roleTitle",
-      title: "Role Title",
+      name: "title",
+      title: "Title",
       type: "reference",
       to: { type: "roleTypes" },
     },
