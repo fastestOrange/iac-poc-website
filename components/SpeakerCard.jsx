@@ -1,6 +1,9 @@
 import classNames from "classnames/bind";
-import styles from "./speakerComponents.module.scss";
+import speakerStyles from "./speakerComponents.module.scss";
+import genericsStyles from "./../styles/generics.module.scss";
 import SocialMediaIcons from "./SocialMediaIcons";
+
+const styles = { ...genericsStyles, ...speakerStyles };
 
 const cx = classNames.bind(styles);
 
@@ -22,7 +25,7 @@ const SpeakerCard = ({ person }) => {
         <p className={cx("professional-title")}>{professionalTitle}</p>
 
         <div className={cx("social-media")}></div>
-        <SocialMediaIcons socials={socials} />
+        {/* TODO: <SocialMediaIcons socials={socials} /> needs to access an array of social media at the index.jsx level*/}
       </div>
     </div>
   );

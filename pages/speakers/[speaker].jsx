@@ -1,9 +1,11 @@
 import groq from "groq";
 import classNames from "classnames/bind";
-import styles from "./speakers.module.scss";
+import speakersStyles from "./speakers.module.scss";
+import genericsStyles from "./../../styles/generics.module.scss";
 import client from "../../modules/sanity/client";
 import SocialMediaIcons from "../../components/SocialMediaIcons";
 
+const styles = { ...genericsStyles, ...speakersStyles };
 const cx = classNames.bind(styles);
 
 export default function Speaker({ person }) {
@@ -13,10 +15,15 @@ export default function Speaker({ person }) {
   return (
     <section className={cx("speaker-container")}>
       <div className={cx("image-placeholder")}></div>
-      <p className={cx("speaker-name")}>
+      <h2 className={cx("speaker-name")}>
         {firstName} {lastName}
-      </p>
+      </h2>
       <SocialMediaIcons socials={socials} />
+
+      <h3>Roles</h3>
+      <h3>Bio</h3>
+      <p>{bio}</p>
+      <h3>Associated Sessions</h3>
     </section>
   );
 }
@@ -56,7 +63,7 @@ export async function getStaticPaths() {
 // TODO: get query working with variable firstName and lastName
 // https://www.sanity.io/docs/query-cheat-sheet
 
-const getSpeakerQuery = (fName, lName) => {
+export const getSpeakerQuery = (fName, lName) => {
   return groq`*[_type == "person" && firstName == "${fName}" && lastName == "${lName}"]{
   firstName, 
   lastName, 

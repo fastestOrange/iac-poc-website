@@ -6,3 +6,10 @@
 .social-media {
     @include mixins.row-between
 }
+
+.image-placeholder {
+    width: 100px;
+    height: 100px;
+    margin: variables.$sp_sm;
+    background: variables.$placeholder_darkgray;
+}

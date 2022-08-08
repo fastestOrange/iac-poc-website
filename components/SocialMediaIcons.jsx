@@ -9,7 +9,7 @@ const SocialMediaIcons = ({ socials }) => {
   console.log("Socials", socials);
   return (
     <div className={cx("social-media")}>
-      {socials.map(({ link, type }) => (
+      {socials?.map(({ link, type }) => (
         <a href={link}>{icons[type]}</a>
       ))}
     </div>
