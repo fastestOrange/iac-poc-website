@@ -29,12 +29,7 @@ export default function Speaker({ person }) {
       <h3>Bio</h3>
       <p>{bio}</p>
       <h3>Associated Sessions</h3>
-    </section>
-  );
 }
-
-let fName;
-let lName;
 
 const getPeopleQuery = groq`*[_type == "person"] {
   firstName,
@@ -45,6 +40,7 @@ const getPeopleQuery = groq`*[_type == "person"] {
 export async function getStaticPaths() {
   try {
     const people = await client.fetch(getPeopleQuery);
+
     console.log("PEOPLE", people);
     const paths = people.map((person) => ({
       params: { speaker: person.firstName + "-" + person.lastName },
@@ -65,8 +61,6 @@ export async function getStaticPaths() {
   }
 }
 
-// TODO: get query working with variable firstName and lastName
-// https://www.sanity.io/docs/query-cheat-sheet
 
 export const getSpeakerQuery = (fName, lName) => {
   return groq`*[_type == "person" && firstName == "${fName}" && lastName == "${lName}"]{
@@ -106,6 +100,7 @@ export async function getStaticProps({ params }) {
     };
   } catch (e) {
     console.log("Error from get static props of speaker", e);
+    
     return {
       props: {
         person: {},

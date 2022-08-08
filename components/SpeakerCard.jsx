@@ -5,11 +5,13 @@ import SocialMediaIcons from "./SocialMediaIcons";
 
 const styles = { ...genericsStyles, ...speakerStyles };
 
+
 const cx = classNames.bind(styles);
 
 const SpeakerCard = ({ person }) => {
   const { firstName, lastName, professionalTitle, socials } = person;
-
+  
+  
   return (
     <div className={cx("card")}>
       {/*TODO: Replace with Image when available in data */}
