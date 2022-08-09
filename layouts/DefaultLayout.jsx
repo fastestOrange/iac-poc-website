@@ -6,8 +6,6 @@ import classNames from "classnames/bind";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "./defaultLayout.module.scss";
-import WelcomeBox from "../components/WelcomeBox";
-import ScheduleButtons from "../components/ScheduleButtons";
 
 const cx = classNames.bind(styles);
 
