@@ -1,8 +1,7 @@
 import "../styles/reset.scss";
 import "../styles/globals.scss";
-<<<<<<< HEAD
-import { FirebaseAppProvider } from "reactfire";
 import { DefaultLayout } from "../layouts/DefaultLayout";
+import { FirebaseAppProvider } from "reactfire";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCvapodXG0DHiW3SebX8MrOyDms5RcC1mM",
@@ -20,15 +19,6 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </DefaultLayout>
     </FirebaseAppProvider>
-=======
-import { DefaultLayout } from "../layouts/DefaultLayout";
-
-function MyApp({ Component, pageProps }) {
-  return (
-    <DefaultLayout>
-      <Component {...pageProps} />
-    </DefaultLayout>
->>>>>>> dd8101c6ad33a790ceeb30ee497e0ae6a4a31d6c
   );
 }
 

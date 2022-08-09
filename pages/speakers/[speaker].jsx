@@ -62,9 +62,6 @@ export async function getStaticPaths() {
   }
 }
 
-// TODO: get query working with variable firstName and lastName
-// https://www.sanity.io/docs/query-cheat-sheet
-
 export const getSpeakerQuery = (fName, lName) => {
   return groq`*[_type == "person" && firstName == "${fName}" && lastName == "${lName}"]{
   firstName, 
@@ -88,7 +85,7 @@ export const getRoleDataQuery = (role) => {
 export async function getStaticProps({ params }) {
   try {
     const name = params?.speaker;
-    [fName, lName] = name.split("-");
+    const [fName, lName] = name.split("-");
 
     let person = await client.fetch(getSpeakerQuery(fName, lName));
     person = person[0];
