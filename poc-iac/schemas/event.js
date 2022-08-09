@@ -19,6 +19,11 @@ export default {
       type: "reference",
       to: [{ type: "eventTypes" }],
     },
+      {
+        name: "year",
+        title: "Year",
+        type: "number",
+      },
     {
       name: "startDate",
       title: "Start Date",

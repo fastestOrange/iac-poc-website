@@ -1,0 +1,71 @@
+// @use 'styles/variables.module';
+// @use 'styles/mixins.module';
+
+.welcome-box-container {
+    display: block;
+    text-align: center;
+    width: 50vw;
+    border-style: solid;
+    border-width: thick;
+    border-color: #3D405B;
+    border-radius: 4px;
+}
+
+.text-container {
+    // padding: 40px 50px 20px 50px;
+    padding: 2vw 5vw 1vw 5vw;
+    
+}
+
+.welcome-box-heading {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 1.5rem;
+    padding-bottom: 1vh;
+   
+}
+
+.welcome-box-subheading {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 1.3rem;
+    padding-bottom: 2vh;
+}
+
+.welcome-box-text {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 1rem;
+}
+
+.button-container {
+    // padding: 0px 20px 40px 20px;
+    padding: 0vw 3vw 3vw 3vw;
+    
+}
+
+.submit-talk-button {
+    // margin-right: 30px;
+    margin-right: 2vw;
+    background-color: transparent;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    // padding: 15px 20px;
+    padding: 1vw 1.5vw;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-weight: 640;
+}
+
+.buy-ticket-button {
+    // margin-left: 30px;
+    margin-left: 2vw;
+    background-color: #FFBC68;
+    border-radius: 4px;
+    // padding: 15px 20px;
+    padding: 1vw 1.5vw;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-weight: 640;
+}
+
