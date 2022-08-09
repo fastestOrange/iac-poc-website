@@ -33,9 +33,6 @@ export default function Speaker({ person }) {
   );
 }
 
-let fName;
-let lName;
-
 const getPeopleQuery = groq`*[_type == "person"] {
   firstName,
   lastName
