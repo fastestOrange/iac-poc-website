@@ -13,6 +13,8 @@ import eventTypes from "./eventTypes";
 import venueTypes from "./venueTypes";
 import venue from "./venue";
 import person from "./person";
+import roleTypes from "./roleTypes";
+import role from "./role";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -34,5 +36,7 @@ export default createSchema({
     venueTypes,
     venue,
     person,
+    roleTypes,
+    role,
   ]),
 });

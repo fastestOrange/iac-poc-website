@@ -34,6 +34,6 @@ export function DefaultLayout({ children }) {
         </section>
         <Footer />
       </div>
-      </AuthProvider>
+    </AuthProvider>
   );
 }

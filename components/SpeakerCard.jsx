@@ -1,14 +1,17 @@
 import classNames from "classnames/bind";
-import Image from "next/image";
-import styles from "./speakerComponents.module.scss";
+import speakerStyles from "./speakerComponents.module.scss";
+import genericsStyles from "./../styles/generics.module.scss";
+import SocialMediaIcons from "./SocialMediaIcons";
+
+const styles = { ...genericsStyles, ...speakerStyles };
 
 const cx = classNames.bind(styles);
 
 const SpeakerCard = ({ person }) => {
-  const { firstName, lastName, professionalTitle } = person;
+  const { firstName, lastName, professionalTitle, socials } = person;
 
   return (
-    <div className={cx("card")}>
+    <div className={cx("card")} key={firstName}>
       {/*TODO: Replace with Image when available in data */}
       <a href={`speakers/${firstName}-${lastName}`}>
         <div className={cx("image-placeholder")} />
@@ -22,6 +25,7 @@ const SpeakerCard = ({ person }) => {
         <p className={cx("professional-title")}>{professionalTitle}</p>
 
         <div className={cx("social-media")}></div>
+        {/* TODO: <SocialMediaIcons socials={socials} /> needs to access an array of social media at the index.jsx level*/}
       </div>
     </div>
   );

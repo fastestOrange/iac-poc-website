@@ -23,6 +23,12 @@ export default {
       type: "string",
     },
     {
+      name: "roles",
+      title: "Roles",
+      type: "array",
+      of: [{ type: "role" }],
+    },
+    {
       name: "company",
       title: "Company",
       type: "string",
