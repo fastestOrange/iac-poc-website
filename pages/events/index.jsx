@@ -1,9 +1,10 @@
+
 import groq from 'groq';
 import client from '../../modules/sanity/client';
 import classNames from 'classnames/bind';
 import styles from "./events.module.scss";
 import EventCard from '../../components/EventCard';
-// import Link from 'next/link';
+
 
 const cx = classNames.bind(styles);
 

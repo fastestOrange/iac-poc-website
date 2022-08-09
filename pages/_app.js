@@ -13,14 +13,21 @@ const firebaseConfig = {
   appId: "1:248607905999:web:f7c340f4346552c9bb7fba"
 };
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, events }) {
   return (
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
     <DefaultLayout>
       <Component {...pageProps} />
     </DefaultLayout>
     </FirebaseAppProvider>
+  
+   
   );
 }
 
+
+
 export default MyApp;
+
+
+
