@@ -84,14 +84,25 @@
 
 .body {
     width: 100%;
+    // ensures footer stays at the bottom even if we have no content on the page without having to position absolutely (always seeing the footer)
+    min-height: calc(100vh - 360px); // header: 106px; mainnav: 54px; footer: 200px;
 }
 
 // Footer
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    height: 200px;
+    @include mixins.row-center;
+    min-height: 200px;
     width: 100%;
-    background: lightgray;
+    background: variables.$color_main_1;
+    color: variables.$color_main_5;
+}
+
+.footer-links {
+    @include mixins.row-between; 
+    min-width: 350px;
+}
+
+.link-col > * {
+        padding: variables.$sp_sm;
 }
