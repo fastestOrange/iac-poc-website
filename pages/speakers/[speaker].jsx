@@ -12,7 +12,6 @@ export default function Speaker({ person }) {
   const { firstName, lastName, professionalTitle, bio, roles, socials } =
     person;
 
-  console.log("speaker in component", person.roles);
   return (
     <section className={cx("speaker-container")}>
       <div className={cx("image-placeholder")}></div>
@@ -42,12 +41,10 @@ const getPeopleQuery = groq`*[_type == "person"] {
 export async function getStaticPaths() {
   try {
     const people = await client.fetch(getPeopleQuery);
-    console.log("PEOPLE", people);
+
     const paths = people.map((person) => ({
       params: { speaker: person.firstName + "-" + person.lastName },
     }));
-
-    console.log("Paths", paths);
 
     return {
       paths,
