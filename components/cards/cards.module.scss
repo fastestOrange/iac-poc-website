@@ -2,10 +2,11 @@
 @use 'styles/mixins.module';
 
 // event welcome card 
-.card {
+.event-card {
     @include mixins.col-center;
     border: variables.$border_thick;
     padding: variables.$sp_std;
+    margin-bottom: variables.$sp_xl;
 
     > * {
         padding: variables.$sp_sm;
