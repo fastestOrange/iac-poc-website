@@ -10,8 +10,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: variables.$font_size_std;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: variables.$font_family_primary;
 }
 
 
@@ -31,7 +30,15 @@ a:focus {
 }
 
 h1 {
-  font-size: variables.$font_size_xl
+  font-size: variables.$sp_xxl;
+}
+
+h2 {
+  font-size: variables.$sp_xl;
+}
+
+h3{ 
+  font-size: variables.$sp_lg;
 }
 
 p {

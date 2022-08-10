@@ -9,13 +9,9 @@ const cx = classNames.bind(styles);
 const Header = () => {
   const { data: user } = useUser();
   return (
-    <nav
-      className={cx("navbar")}
-      role="navigation"
-      aria-label="main navigation"
-    >
+    <nav className={cx("header")}>
       <a href="/">
-        <div className={cx("navbar-brand")}>
+        <div className={cx("logo")}>
           <div className={cx("logo-image-container")}>
             <Image
               src={icon}
@@ -33,13 +29,14 @@ const Header = () => {
         </div>
       </a>
 
-      <div className={cx("navbar-end")}>
+      {/*TODO: Logout*/}
+      <div className={cx("login")}>
         {user ? (
           user?.displayName
         ) : (
           // TODO replace this with a styled button component
-          <a className={cx("button")} href="/login">
-            Log in
+          <a href="/login">
+            <button className={cx("login-button")}>Log in</button>
           </a>
         )}
       </div>

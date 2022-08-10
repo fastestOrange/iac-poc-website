@@ -1,0 +1,54 @@
+@use 'styles/variables.module';
+@use 'styles/mixins.module';
+
+ 
+
+// Specific Individual Event
+
+.event-container {
+    @include mixins.col-center;
+}
+
+.body {
+    @include mixins.row-center;
+    border-top: variables.$border_std;
+    width: 100%;
+    padding: 0 variables.$sp_xl;
+}
+
+// Side Nav
+.side-nav-container {
+    max-width: 150px;
+    border-right: variables.$border_std;
+ 
+
+    li {
+        border-top: variables.$border_thin_light;
+        padding: variables.$sp_sm;
+    }
+
+    .side-nav:last-child {
+        border-bottom: variables.$border_thin_light;
+        margin-bottom: 200px;
+    }
+}
+
+.side-nav-header {
+    width: 120px;
+    text-align: center;
+    padding: variables.$sp_std;
+}
+
+
+// content 
+.content {
+    @include mixins.col-start;
+    width: 100%;
+    padding: variables.$sp_std variables.$sp_lg;
+ }
+
+.speakers-container {
+    @include mixins.row-between;
+ }
+
+ // EventBanner

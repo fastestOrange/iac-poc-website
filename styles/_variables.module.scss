@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap');
+
+
 // TODO: Update theme colors once confirmed by design
 $color_main_1: #3D405B;
 $color_main_2: #FFBC68;
@@ -22,6 +25,9 @@ $placeholder_lightgray: #D9D9D9;
 
 
 // font 
+
+$font_family_primary: 'Montserrat', sans-serif;
+
 $font_size_xxs: .3rem;
 $font_size_xs: .5rem;
 $font_size_sm: .8rem;
@@ -33,9 +39,18 @@ $font_size_xl: 1.4rem;
 $sp_xxs: 2px;
 $sp_xs: 5px;
 $sp_sm: 10px;
-$sp_std: 20px;
-$sp_lg: 25px;
-$sp_xlg: 30px;
+$sp_std: 18px;
+$sp_lg: 24px;
+$sp_xl: 32px;
+$sp_xxl: 40px;
+
+// borders
+
+
+$border_thin: 1px solid $color_main_1;
+$border_std: 2px solid $color_main_1;
+$border_thick: 5px solid $color_main_1;
+$border_thin_light: 1px solid $color_accent_4;
 
 // breakpoints
 

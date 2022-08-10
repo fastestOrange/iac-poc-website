@@ -1,6 +1,10 @@
 @use 'variables.module';
 @use 'mixins.module';
 
+.hidden {
+    display: none;
+}
+
 // Images and Icons
 
 .social-media {
@@ -12,4 +16,38 @@
     height: 100px;
     margin: variables.$sp_sm;
     background: variables.$placeholder_darkgray;
+}
+
+// Flexbox
+
+.row-center{
+    @include mixins.row-center
+}
+
+.col-center {
+    @include mixins.col-center
+}
+
+// Layout 
+
+.nav-links {
+    border: variables.$border_thin_light;
+    height: 100px;
+    width: 100%;
+}
+
+.divider-with-logo {
+    @include mixins.row-between;
+    width: 100%;
+    height: 50px;
+
+    .line {
+        width: 45%;
+        border: variables.$border_thin;
+    }
+
+    .logo-image-container {
+        width: 50px;
+        height: 50px;
+    }
 }
