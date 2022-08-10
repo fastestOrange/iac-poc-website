@@ -12,16 +12,16 @@ const MailingListForm = () => {
       <p>Join the IAC Mailing List today!</p>
       <div className={cx("top-row")}>
         <div className={cx("data-input")}>
-          <label for="fname">First Name</label>
+          <label htmlFor="fname">First Name</label>
           <input type="text" id="fname" name="fname" />
         </div>
         <div className={cx("data-input")}>
-          <label for="lname">Last Name</label>
+          <label htmlFor="lname">Last Name</label>
           <input type="text" id="lname" name="lname" />
         </div>
       </div>
       <div className={cx("data-input")}>
-        <label for="email">Email</label>
+        <label htmlFor="email">Email</label>
         <input type="email" id="email" name="email" />
       </div>
       <CTAButton text="Subscribe" link="/" type="primary" />
