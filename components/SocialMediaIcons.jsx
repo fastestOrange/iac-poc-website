@@ -10,7 +10,7 @@ const SocialMediaIcons = ({ socials }) => {
     twitter: <FaTwitter size="2rem" />,
     instagram: <FaInstagram size="2rem" />,
   };
-  console.log("Socials", socials);
+
   return (
     <div className={cx("social-media")}>
       {socials?.map(({ link, type }) => (
