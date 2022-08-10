@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import speakerStyles from "./speakerComponents.module.scss";
 import genericsStyles from "./../styles/generics.module.scss";
-import SocialMediaIcons from "./SocialMediaIcons";
+//import SocialMediaIcons from "./SocialMediaIcons";
 import Link from "next/link";
 
 const styles = { ...genericsStyles, ...speakerStyles };

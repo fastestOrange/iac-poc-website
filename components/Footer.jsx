@@ -4,9 +4,9 @@ import SocialMediaIcons from "./SocialMediaIcons";
 
 const cx = classNames.bind(styles);
 const dummySocialMedia = [
-  { type: "Twitter", link: "http://www.twitter.com" },
-  { type: "Instagram", link: "http://www.Instagram.com" },
-  { type: "LinkedIn", link: "http://www.LinkedIn.com" },
+  { type: "twitter", link: "http://www.twitter.com" },
+  { type: "instagram", link: "http://www.Instagram.com" },
+  { type: "linkedIn", link: "http://www.LinkedIn.com" },
 ];
 
 const Footer = () => {
