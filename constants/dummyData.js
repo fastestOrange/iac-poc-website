@@ -4,9 +4,18 @@ export const mainNavLinks = [
     label: "About IAC",
     slug: "/about",
     subLinks: [
-      { label: "Why IAC", slug: "/why-iac" },
-      { label: "Vision and Values", slug: "/vision-and-values" },
       { label: "Meet the Team", slug: "/team" },
+      { label: "Vision and Values", slug: "/vision-and-values" },
+      { label: "Past Conferences", slug: "/past-conferences" },
+      { label: "Policies", slug: "/policies" },
+    ],
+  },
+  {
+    label: "Why IAC",
+    slug: "/why",
+    subLinks: [
+      { label: "Convince Your Boss", slug: "/professionals", subLinks: [] },
+      { label: "For First Timers", slug: "/first-timers", subLinks: [] },
     ],
   },
 
@@ -14,13 +23,19 @@ export const mainNavLinks = [
     label: "Get Involved",
     slug: "/get-involved",
     subLinks: [
-      { label: "Present", slug: "/present" },
       { label: "Volunteer", slug: "/volunteer" },
       { label: "Sponsor", slug: "/sponsor" },
-      { label: "Contact", slug: "/contact" },
     ],
   },
-  { label: "IAC on Demand", slug: "/iac-on-demand", subLinks: [] },
+  {
+    label: "IAC on Demand",
+    slug: "/iac-on-demand",
+    subLinks: [
+      { label: "Content Library", slug: "/content-library", subLinks: [] },
+      { label: "Media Detail", slug: "/media", subLinks: [] },
+    ],
+  },
+  { label: "News & Updates", slug: "/news-updates", subLinks: [] },
 ];
 
 export const dummySpeakers = [
