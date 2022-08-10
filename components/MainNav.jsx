@@ -18,7 +18,7 @@ const MainNav = ({ navLinks }) => {
             {link.subLinks.length > 0 && (
               <ul className={cx("dropdown-menu")}>
                 {link.subLinks.map((link) => (
-                  <li>{link.label}</li>
+                  <li key={link.label}>{link.label}</li>
                 ))}
               </ul>
             )}

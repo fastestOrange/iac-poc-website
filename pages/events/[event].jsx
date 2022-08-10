@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 import eventsStyles from "./events.module.scss";
 import genericsStyles from "./../../styles/generics.module.scss";
 import client from "../../modules/sanity/client";
-import EventBanner from "./../../components/EventBanner";
+import EventBanner from "../../components/EventBanner";
 import SideNav from "../../components/SideNav";
 import DividerWithLogo from "../../components/DividerWithLogo";
 import SpeakerCard from "../../Components/SpeakerCard";
@@ -65,7 +65,11 @@ export default function Event({ event }) {
           <section className={cx("info-section")}>
             <h3>Updates from the Team</h3>
             {dummyUpdates.map((update) => (
-              <UpdateCard date={update.date} text={update.text} />
+              <UpdateCard
+                key={"update" + update.date}
+                date={update.date}
+                text={update.text}
+              />
             ))}
           </section>
 
