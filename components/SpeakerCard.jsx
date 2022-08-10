@@ -2,6 +2,7 @@ import classNames from "classnames/bind";
 import speakerStyles from "./speakerComponents.module.scss";
 import genericsStyles from "./../styles/generics.module.scss";
 import SocialMediaIcons from "./SocialMediaIcons";
+import Link from "next/link";
 
 const styles = { ...genericsStyles, ...speakerStyles };
 
@@ -13,9 +14,9 @@ const SpeakerCard = ({ person }) => {
   return (
     <div className={cx("card")} key={firstName}>
       {/*TODO: Replace with Image when available in data */}
-      <a href={`speakers/${firstName}-${lastName}`}>
+      <Link href={`/speakers/${firstName}-${lastName}`}>
         <div className={cx("image-placeholder")} />
-      </a>
+      </Link>
 
       <div className={cx("speaker-info")}>
         <p className={cx("name")}>

@@ -7,12 +7,21 @@ import EventBanner from "./../../components/EventBanner";
 import SideNav from "../../components/SideNav";
 import DividerWithLogo from "../../components/DividerWithLogo";
 import SpeakerCard from "../../Components/SpeakerCard";
-import { dummySpeakers } from "../../constants/dummyData";
+import ButtonLg from "../../components/buttons/ButtonLg";
+import MailingListForm from "../../components/forms/MailingListForm";
+import {
+  dummySpeakers,
+  dummyKeyNotes,
+  dummyUpdates,
+} from "../../constants/dummyData";
+import UpdateCard from "../../components/cards/UpdateCard";
+import CTACard from "../../components/cards/CTACard";
 
 const styles = { ...genericsStyles, ...eventsStyles };
 const cx = classNames.bind(styles);
 
 // TODO: Remove dummy data and hook up to live Sanity profiles
+// TODO: Accessibility - research nested sections, best use of semantic html
 export default function Event({ event }) {
   const { name, theme, type, startDate, endDate, venue } = event;
 
@@ -27,27 +36,63 @@ export default function Event({ event }) {
           <section className={cx("info-section")}>
             <h3>Speakers</h3>
             <div className={cx("speakers-container")}>
-              {dummySpeakers.map((person) => (
-                <SpeakerCard
-                  key={person.firstName + person.lastName}
-                  person={person}
-                />
-              ))}
+              <div className={cx("key-notes")}>
+                {dummyKeyNotes.map((person) => (
+                  <SpeakerCard
+                    key={person.firstName + person.lastName}
+                    person={person}
+                  />
+                ))}
+              </div>
+              <div className={cx("other-speakers")}>
+                {dummySpeakers.map((person) => (
+                  <SpeakerCard
+                    key={person.firstName + person.lastName}
+                    person={person}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+          <section className={cx("info-section")}>
+            <h3>Schedule Overview</h3>
+            <div className={cx("schedule-buttons-container")}>
+              <ButtonLg link="/" text="Workshops" />
+              <ButtonLg link="/" text="Main Conference" />
             </div>
           </section>
 
-          <div>
-            <h3>Schedule Overview</h3>
-          </div>
-          <div>
+          <section className={cx("info-section")}>
             <h3>Updates from the Team</h3>
-          </div>
+            {dummyUpdates.map((update) => (
+              <UpdateCard date={update.date} text={update.text} />
+            ))}
+          </section>
 
           <DividerWithLogo />
 
-          {/*2 Preview Card */}
+          <section className={cx("get-involved")}>
+            <CTACard
+              title={"Join as a Sponsor"}
+              text={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor"
+              }
+              link="/"
+              ctaText="Learn about sponsorships"
+            />
+
+            <CTACard
+              title={"Get Involved as a Volunteer"}
+              text={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor"
+              }
+              link="/"
+              ctaText="Learn about volunteer opportunities"
+            />
+          </section>
 
           {/* Form */}
+          <MailingListForm />
         </div>
       </div>
     </section>

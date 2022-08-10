@@ -18,15 +18,6 @@
     background: variables.$placeholder_darkgray;
 }
 
-// Flexbox
-
-.row-center{
-    @include mixins.row-center
-}
-
-.col-center {
-    @include mixins.col-center
-}
 
 // Layout 
 

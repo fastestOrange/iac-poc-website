@@ -11,6 +11,7 @@
 
 .body {
     @include mixins.row-center;
+    align-items: flex-start;
     border-top: variables.$border_std;
     width: 100%;
     padding: 0 variables.$sp_xl;
@@ -47,8 +48,33 @@
     padding: variables.$sp_std variables.$sp_lg;
  }
 
-.speakers-container {
-    @include mixins.row-between;
+
+ // welcome banner
+
+ // info sections
+ .info-section {
+    width: 100%;
+    margin-bottom: variables.$sp_lg;
  }
 
- // EventBanner
+ // speakers 
+ .speakers-container {
+    @include mixins.col-center;
+ }
+
+ .key-notes, .other-speakers {
+    @include mixins.row-between;
+
+    > * {
+        margin: variables.$sp_std;
+    }
+ }
+
+ .schedule-buttons-container {
+    @include mixins.row-around;
+    width: 100%;
+}
+
+.get-involved {
+    @include mixins.row-between;
+}
