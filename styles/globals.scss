@@ -31,20 +31,19 @@ a:focus {
 
 h1 {
   font-size: variables.$sp_xxl;
+  padding-bottom: variables.$sp_std;
 }
 
 h2 {
   font-size: variables.$sp_xl;
+  padding-bottom: variables.$sp_std;
 }
 
 h3{ 
   font-size: variables.$sp_lg;
+  padding-bottom: variables.$sp_std;
 }
 
 p {
   font-size: variables.$font_size_std;
-}
-
-.title {
-  padding: variables.$sp_std;
 }

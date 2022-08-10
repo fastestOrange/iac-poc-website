@@ -1,0 +1,30 @@
+@use 'styles/variables.module';
+@use 'styles/mixins.module';
+
+.mailing-list-form {
+    @include mixins.col-start;
+    border: variables.$border_thin_light;
+    align-items: start;
+    padding: variables.$sp_std;
+    > * {
+        padding: variables.$sp_std;
+    }
+
+    .title {
+        font-size: variables.$font_size_lg;
+    }
+
+    input {
+        min-width: 300px;
+    }
+
+    .top-row {
+        @include mixins.row-between;
+    
+    }
+    
+    .data-input {
+        @include mixins.col-start;
+    }
+
+}

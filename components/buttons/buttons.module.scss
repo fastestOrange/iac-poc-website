@@ -1,0 +1,27 @@
+@use 'styles/variables.module';
+@use 'styles/mixins.module';
+
+.button-lg-background {
+    @include mixins.row-center;
+    min-width: 320px;
+    min-height: 150px;
+    background-color: variables.$color_main_1;
+}
+
+.button-lg {
+    min-width: 310px;
+    min-height: 145px;
+    background-color: variables.$color_main_1;
+    color: variables.$color_main_5;
+    font-size: variables.$font_size_xl;
+    border: 1px solid variables.$color_main_5;
+}
+
+.button-md {
+    min-width: 310px;
+    min-height: 80px;
+    padding: variables.$sp_sm;
+    background-color: variables.$color_main_1;
+    color: variables.$color_main_5;
+    font-size: variables.$font_size_std;;
+}

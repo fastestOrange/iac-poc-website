@@ -1,0 +1,29 @@
+@use 'styles/variables.module';
+@use 'styles/mixins.module';
+
+// update card
+
+.update-card {
+    @include mixins.row-start;
+    border: variables.$border_thin_light;
+    margin: variables.$sp_std;
+
+    .update-date {
+        padding: variables.$sp_std;
+        margin-right: variables.$sp_std;
+        background-color: variables.$color_main_3;
+    }
+}
+
+
+
+// CTA card
+
+.cta-card {
+    @include mixins.col-start;
+
+    > * {
+        padding: variables.$sp_sm;
+    }
+}
+

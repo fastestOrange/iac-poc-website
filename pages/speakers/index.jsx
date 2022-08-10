@@ -1,8 +1,8 @@
 import groq from "groq";
 import classNames from "classnames/bind";
 import styles from "./speakers.module.scss";
-import client from "../../modules/sanity/client";
-import SpeakerCard from "../../components/SpeakerCard";
+import client from "../../../modules/sanity/client";
+import SpeakerCard from "../../cards/components/SpeakerCard";
 
 const cx = classNames.bind(styles);
 

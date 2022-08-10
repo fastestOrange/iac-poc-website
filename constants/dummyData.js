@@ -55,3 +55,31 @@ export const dummySpeakers = [
     socials: [{ type: " LinkedIn", link: "" }],
   },
 ];
+
+export const dummyKeyNotes = [
+  {
+    firstName: "Grace",
+    lastName: "Lau",
+    professionalTitle: "",
+    socials: [{ type: " LinkedIn", link: "" }],
+  },
+  {
+    firstName: "Grace",
+    lastName: "Lau",
+    professionalTitle: "",
+    socials: [{ type: " LinkedIn", link: "" }],
+  },
+  {
+    firstName: "Grace",
+    lastName: "Lau",
+    professionalTitle: "",
+    socials: [{ type: " LinkedIn", link: "" }],
+  },
+];
+
+export const dummyUpdates = [
+  { date: "Sept 15, 2021", text: "Announcing TIcket Sales & Scholarships" },
+  { date: "Sept 15, 2021", text: "Announcing Call for Proposal" },
+  { date: "Sept 15, 2021", text: "Announcing the Co-Chairs for IAC22" },
+  { date: "Sept 15, 2021", text: "Announcing IAC22" },
+];
