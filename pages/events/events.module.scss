@@ -41,13 +41,13 @@
 }
 
 
-
 // content 
 .content {
     @include mixins.col-start;
     width: 100%;
     padding: variables.$sp_std variables.$sp_lg;
  }
+
 
 
  // event banner
@@ -63,7 +63,6 @@
         font-size: variables.$font_size_lg;
     }
 }
-
 
  // info sections
  .info-section {
