@@ -31,13 +31,15 @@ const query = groq`*[_type == "person"] {
   linkedIn
 }`;
 
+export let speakers;
+
 export async function getStaticProps() {
-  const people = await client.fetch(query);
+  speakers = await client.fetch(query);
   //TODO: match results to firebase query results in order to identify which people are speakers and filter them out.
 
   return {
     props: {
-      people,
+      speakers,
     },
   };
 }

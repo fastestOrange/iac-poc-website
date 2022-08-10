@@ -9,6 +9,11 @@ export default {
       type: "string",
     },
     {
+      name: "abbreiatedName",
+      title: "Abbreviated Name",
+      type: "string",
+    },
+    {
       name: "theme",
       title: "Theme",
       type: "string",

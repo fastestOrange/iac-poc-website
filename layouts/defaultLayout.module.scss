@@ -7,13 +7,13 @@
 
 // Header
 
-.navbar {
+.header {
     @include mixins.row-between;
     width: 100%;
     padding: variables.$sp_std;
 }
 
-.navbar-brand {
+.logo {
     @include mixins.row-center;
     max-width: 150px
 }
@@ -38,33 +38,60 @@
     color: variables.$color_main_1;
 }
 
-// Body
+// Main Nav
 
-.body {
-    @include mixins.row-start;
-    align-items: stretch;
+.main-nav-container {
     width: 100%;
-    min-height: 62vh;
-    margin: variables.$sp_std;
+    @include mixins.row-center;
+}
+
+.main-nav {
+    @include mixins.row-center;
+    align-items: flex-start;
+    padding-top: variables.$sp_std;
+    width: 100%;
+    height: 54px;
+    background-color: variables.$color_main_1;
+    color: variables.$color_main_5;
 
     > * {
-        padding: variables.$sp_std;
+        padding: 0 variables.$sp_lg;
     }
 }
 
-.left-menu {
-    width: 10%;
-    min-width: 150px;
+
+.dropdown-menu {
+    position: relative;
+    display: none;
+    margin-top: variables.$sp_std;
+    z-index: 10000;
 }
 
-.content {
-    width: 90%;
+.dropdown-menu > * {
+    border: variables.$border_thin_light;
+    background-color: variables.$color_main_1;
+    padding: variables.$sp_sm;
+}
+
+.link-container:hover {
+    .dropdown-menu {
+        display: block;
+    }
+}
+
+
+// Body
+
+.body {
+    width: 100%;
 }
 
 // Footer
 
 .footer {
+    position: absolute;
+    bottom: 0;
     height: 200px;
     width: 100%;
-    background: lightgray
+    background: lightgray;
 }
