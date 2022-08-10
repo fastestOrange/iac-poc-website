@@ -4,7 +4,7 @@
 .mailing-list-form {
     @include mixins.col-start;
     border: variables.$border_thin_light;
-    align-items: start;
+    align-items: flex-start;
     padding: variables.$sp_std;
     > * {
         padding: variables.$sp_std;
