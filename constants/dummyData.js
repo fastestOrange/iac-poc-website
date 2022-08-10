@@ -4,7 +4,14 @@ export const mainNavLinks = [
     label: "About IAC",
     slug: "/about",
     subLinks: [
-      { label: "Meet the Team", slug: "/team" },
+      {
+        label: "Team",
+        slug: "/team",
+        subLinks: [
+          { label: "Advisory Boards", slug: "/advisory-board", subLinks: [] },
+          { label: "Volunteers", slug: "/volunteer", subLinks: [] },
+        ],
+      },
       { label: "Vision and Values", slug: "/vision-and-values" },
       { label: "Past Conferences", slug: "/past-conferences" },
       { label: "Policies", slug: "/policies" },

@@ -16,6 +16,7 @@ import {
 } from "../../constants/dummyData";
 import UpdateCard from "../../components/cards/UpdateCard";
 import CTACard from "../../components/cards/CTACard";
+import EventWelcomeCard from "../../components/cards/EventWelcomeCard";
 
 const styles = { ...genericsStyles, ...eventsStyles };
 const cx = classNames.bind(styles);
@@ -32,6 +33,7 @@ export default function Event({ event }) {
         <SideNav />
         <div className={cx("content")}>
           {/* Welcome CTA banner */}
+          <EventWelcomeCard />
 
           <section className={cx("info-section")}>
             <h3>Speakers</h3>

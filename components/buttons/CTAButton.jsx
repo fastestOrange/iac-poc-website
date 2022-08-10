@@ -3,7 +3,7 @@ import styles from "./buttons.module.scss";
 
 const cx = classNames.bind(styles);
 
-const ButtonMd = ({ link, text, type }) => {
+const CTAButton = ({ link, text, type = "primary" }) => {
   return (
     <a href={link}>
       <button
@@ -19,4 +19,4 @@ const ButtonMd = ({ link, text, type }) => {
   );
 };
 
-export default ButtonMd;
+export default CTAButton;
