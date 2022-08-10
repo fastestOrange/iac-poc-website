@@ -41,6 +41,7 @@
 }
 
 
+
 // content 
 .content {
     @include mixins.col-start;
@@ -49,7 +50,20 @@
  }
 
 
- // welcome banner
+ // event banner
+ .event-banner {
+    @include mixins.col-center;
+    padding: variables.$sp_xl;
+
+    hr {
+        border: 1px solid variables.$color_main_1;
+    }
+
+    .event-date {
+        font-size: variables.$font_size_lg;
+    }
+}
+
 
  // info sections
  .info-section {

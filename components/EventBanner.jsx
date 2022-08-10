@@ -9,6 +9,7 @@ const EventBanner = () => {
       <h1>
         IAC22 Online
         <br />
+        <hr />
         [Re]Connect
       </h1>
       <div className={cx("event-date")}>April 18th-23rd, 2022</div>
