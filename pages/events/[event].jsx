@@ -6,7 +6,7 @@ import client from "../../modules/sanity/client";
 import EventBanner from "../../components/EventBanner";
 import SideNav from "../../components/SideNav";
 import DividerWithLogo from "../../components/DividerWithLogo";
-import SpeakerCard from "../../Components/SpeakerCard";
+import SpeakerCard from "../../components/SpeakerCard";
 import ButtonLg from "../../components/buttons/ButtonLg";
 import MailingListForm from "../../components/forms/MailingListForm";
 import {

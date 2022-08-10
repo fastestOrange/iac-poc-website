@@ -1,6 +1,5 @@
 import groq from "groq";
 import client from "../../modules/sanity/client";
-import SideNav from "../../components/SideNav";
 import classNames from "classnames/bind";
 import styles from "../../pages/events/events.module.scss";
 
