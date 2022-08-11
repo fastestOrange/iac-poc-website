@@ -27,7 +27,6 @@
         }
     }
 }
-
 // update card
 
 .update-card {
@@ -48,7 +47,6 @@
 
 .cta-card {
     @include mixins.col-start;
-
     .cta-title {
         font-size: variables.$font_size_xl;
     }
