@@ -1,8 +1,6 @@
 @use 'styles/variables.module';
 @use 'styles/mixins.module';
 
- 
-
 // Specific Individual Event
 
 .event-container {
@@ -40,15 +38,12 @@
     padding: variables.$sp_std;
 }
 
-
 // content 
 .content {
     @include mixins.col-start;
     width: 100%;
     padding: variables.$sp_std variables.$sp_lg;
  }
-
-
 
  // event banner
  .event-banner {

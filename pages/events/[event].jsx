@@ -18,7 +18,6 @@ import UpdateCard from "../../components/cards/UpdateCard";
 import CTACard from "../../components/cards/CTACard";
 import EventWelcomeCard from "../../components/cards/EventWelcomeCard";
 
-
 const styles = { ...genericsStyles, ...eventsStyles };
 const cx = classNames.bind(styles);
 

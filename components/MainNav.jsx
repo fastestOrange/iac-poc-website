@@ -18,7 +18,11 @@ const MainNav = ({ navLinks }) => {
             {link.subLinks.length > 0 && (
               <ul className={cx("dropdown-menu")}>
                 {link.subLinks.map((link) => (
+<<<<<<< HEAD
                   <li key={link.label}>{link.label}</li>
+=======
+                  <li>{link.label}</li>
+>>>>>>> 647dc0c (WIP - event page layout has side nav, unstyled event banner, speakers, and divider.  default layout has main navigation and hover links - need to fix shifting on hover.)
                 ))}
               </ul>
             )}
