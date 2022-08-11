@@ -1,7 +1,6 @@
 @use 'styles/variables.module';
 @use 'styles/mixins.module';
 
-
 // event welcome card 
 .event-card {
     @include mixins.col-center;
@@ -53,7 +52,6 @@
     .cta-title {
         font-size: variables.$font_size_xl;
     }
-
 
     > * {
         padding: variables.$sp_sm;
