@@ -1,8 +1,6 @@
 import classNames from "classnames/bind";
 import ButtonMd from "../buttons/ButtonMd";
-import genericsStyles from "./cards.module.scss";
-
-const styles = { ...genericsStyles };
+import styles from "./cards.module.scss";
 
 const cx = classNames.bind(styles);
 

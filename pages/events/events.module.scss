@@ -1,8 +1,6 @@
 @use 'styles/variables.module';
 @use 'styles/mixins.module';
 
- 
-
 // Specific Individual Event
 
 .event-container {
@@ -40,7 +38,6 @@
     padding: variables.$sp_std;
 }
 
-
 // content 
 .content {
     @include mixins.col-start;
@@ -48,8 +45,19 @@
     padding: variables.$sp_std variables.$sp_lg;
  }
 
+ // event banner
+ .event-banner {
+    @include mixins.col-center;
+    padding: variables.$sp_xl;
 
- // welcome banner
+    hr {
+        border: 1px solid variables.$color_main_1;
+    }
+
+    .event-date {
+        font-size: variables.$font_size_lg;
+    }
+}
 
  // info sections
  .info-section {
