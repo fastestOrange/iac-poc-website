@@ -1,0 +1,22 @@
+@use 'styles/variables.module';
+@use 'styles/mixins.module';
+
+.pastConferences-container {
+    @include mixins.col-center;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: variables.$sp_std;
+    margin-top: variables.$sp_std;
+  }
+  
+  .event-cards-container {
+    @include mixins.row-start;
+    flex-wrap: wrap;
+  
+    > * {
+      margin: variables.$sp_sm;
+    }
+  }
+  
